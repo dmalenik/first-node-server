@@ -1,0 +1,24 @@
+{
+  "name": "first-node-server",
+  "version": "1.0.0",
+  "description": "this is my first static file server based on pure Node.js and its built-in APIs",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmalenik/first-node-server"
+  },
+  "keywords": [
+    "node.js",
+    "server",
+    "static",
+    "files",
+    "pure",
+    "first"
+  ],
+  "author": "Dmytro Malenik",
+  "license": "ISC"
+}
