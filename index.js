@@ -1,9 +1,5 @@
-// import internal Node.js modules
-// fs enables interacting with the file system
 import * as fs from 'node:fs';
-// http supports HTTP protocol features
 import * as http from 'node:http';
-// path provides utilities to work with a file and a directory paths
 import * as path from 'node:path';
 
 // specifies a place the server will be listen to HTTP requests
@@ -29,7 +25,6 @@ const MIME_TYPES = {
 // /foo, bar, baz/asfd returns /foo/bar/baz/asfd
 // the process object provides information about, and control over, the current Node.js process
 // process.cwd returns a current working directory of the Node.js process
-// returns the current node.js process directory path with a work static in the end
 const STATIC_PATH = path.join(process.cwd(), './static');
 console.log(STATIC_PATH);
 
@@ -66,7 +61,6 @@ const prepareFile = async (url) => {
 // the requestListener is a function which is added automatically to the request event
 // server.listen() starts the HTTP server listening for connections
 http.createServer(async (req, res) => {
-    // returns a file data based on the url request
     const file = await prepareFile(req.url);
     // checks whether the file is found or not
     const statusCode = file.found ? 200 : 404;
