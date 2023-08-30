@@ -27,7 +27,6 @@ const MIME_TYPES = {
 // the process object provides information about, and control over, the current Node.js process
 // process.cwd returns a current working directory of the Node.js process
 const STATIC_PATH = path.join(process.cwd(), './static');
-console.log(STATIC_PATH);
 
 const toBool = [() => true, () => false];
 
