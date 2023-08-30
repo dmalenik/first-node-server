@@ -7,6 +7,7 @@ const PORT = 8000;
 
 // Multipurpose Internet Mail Extensions
 // consists of a type and a subtype divided by a slash
+// identify a file format of contents passed through the Internet
 const MIME_TYPES = {
     default: 'application/octet-stream',
     html: 'text/html; charset=UTF-8',
@@ -30,6 +31,9 @@ console.log(STATIC_PATH);
 
 const toBool = [() => true, () => false];
 
+// creates a path to a file
+// checks whether the path is exists 
+// sets a stream for the file to reading if the path is accessible
 const prepareFile = async (url) => {
     // set a path to files
     const paths = [STATIC_PATH, url];
@@ -60,6 +64,9 @@ const prepareFile = async (url) => {
 // http.createServer returns a new instance of http.Server
 // the requestListener is a function which is added automatically to the request event
 // server.listen() starts the HTTP server listening for connections
+
+// sets HTTP heading
+// sends the response back in the created stream
 http.createServer(async (req, res) => {
     const file = await prepareFile(req.url);
     // define the status of the file
@@ -77,3 +84,6 @@ http.createServer(async (req, res) => {
 }).listen(PORT);
 
 console.log(`Server running at http://127.0.0.1:${PORT}`);
+
+// prepare a file to be streamed
+// establish HTTP connection and push a stream to the client
